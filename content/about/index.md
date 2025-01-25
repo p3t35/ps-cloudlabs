@@ -16,8 +16,6 @@ When I’m not working on client projects or tinkering with my own homelab, I’
 Thanks for stopping by! Feel free to reach out if you want to chat about virtualization, cloud engineering, or any of the technologies I’m passionate about. Let's connect and collaborate!
 
 
-
-### **Certs**
 ![Certifications](mycerts.png)
 [Credly](https://www.credly.com/users/peter-summa)
 
@@ -30,7 +28,7 @@ Lindenstr. 2
 
 74238 Krautheim
 
-### Kontakt
+**Kontakt**
 mail: [petersumma96@gmail.com](mailto:petersumma96@gmail.com)
 
 
