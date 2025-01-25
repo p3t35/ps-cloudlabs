@@ -16,76 +16,26 @@ author: 'Peter Summa'
 tags:
   - homelab
 ---
+# My Current Lab Setup
 
-[Page bundles](https://gohugo.io/content-management/page-bundles/) are an optional way to [organize page resources](https://gohugo.io/content-management/page-resources/) within Hugo.
+When it comes to building my home lab, my main goal is to keep things simple, low-cost, and low-overhead. It’s a place where I can experiment with new technologies, test out virtual environments, and try out different configurations—without draining my wallet or disrupting the rest of the household. Here’s a breakdown of my current setup and how I’ve optimized it for efficiency and independence.
 
-You can opt-in to using page bundles in Hugo Clarity with `usePageBundles` in your site configuration or in a page's front matter. [Read more about `usePageBundles`.](https://github.com/chipzoller/hugo-clarity#organizing-page-resources)
+## The Hardware
 
-With page bundles, resources for a page or section, like images or attached files, live **in the same directory as the content itself** rather than in your `static` directory.
+My lab is built around **two Intel NUCs**, each equipped with **64GB of RAM**. These compact machines provide enough horsepower to run a variety of workloads, but they’re small enough to keep everything running quietly and with minimal energy consumption. 
 
-Hugo Clarity supports the use of [leaf bundles](https://gohugo.io/content-management/page-bundles/#leaf-bundles), which are any directories within the `content` directory that contain an `index.md` file. Hugo's documentation gives this example:
+Given that the goal of this lab is to be cost-effective, I’ve kept the hardware fairly modest. But the best part? The lab is **completely independent from our home network**, so if something breaks or if I’m running some resource-heavy workloads, **Netflix and the rest of the household’s devices still work without interruption**. It's the perfect balance between experimenting with new tech and maintaining a smooth home environment.
 
-```text
-content
-├── about
-│   ├── index.md
-├── posts
-│   ├── my-post
-│   │   ├── content1.md
-│   │   ├── content2.md
-│   │   ├── image1.jpg
-│   │   ├── image2.png
-│   │   └── index.md
-│   └── my-other-post
-│       └── index.md
-│
-└── another-section
-    ├── ..
-    └── not-a-leaf-bundle
-        ├── ..
-        └── another-leaf-bundle
-            └── index.md
-```
+## Room for Growth
 
-<blockquote>
-In the above example `content` directory, there are four leaf
-bundles:
+While my lab setup is functional for now, there’s always room for improvement. There’s still plenty of capacity for growth, and new hardware is always welcome—whether it's adding more storage, integrating additional virtual machines, or even expanding to more powerful components like additional NUCs or networking gear. But like with any hobby or project, **everything in due time**. I’m not in a rush to make the lab bigger or more complex; I’m more focused on optimizing what I have and gradually expanding as needed.
 
-**about**: This leaf bundle is at the root level (directly under
-    `content` directory) and has only the `index.md`.
+## Why This Setup Works for Me
 
-**my-post**: This leaf bundle has the `index.md`, two other content
-    Markdown files and two image files. **image1** is a page resource of `my-post`
-    and only available in `my-post/index.md` resources. **image2** is a page resource of `my-post`
-    and only available in `my-post/index.md` resources.
+This lab setup strikes the perfect balance between cost and functionality. The **Intel NUCs** are compact and efficient, and they’re flexible enough to run a variety of virtualized environments without creating too much overhead. Plus, the fact that the lab is completely isolated from the rest of the home network means that I can take risks, experiment, and tinker without worrying about affecting our daily activities.
 
-**my-other-post**: This leaf bundle has only the `index.md`.
+In the future, I’m excited to keep building this lab. Whether it’s adding automation, testing cloud solutions, there’s always room to improve and learn. For now, though, I’m happy with this setup and looking forward to where it can take me next.
 
-**another-leaf-bundle**: This leaf bundle is nested under couple of
-    directories. This bundle also has only the `index.md`.
+---
 
-_The hierarchy depth at which a leaf bundle is created does not matter,
-as long as it is not inside another **leaf** bundle._
-</blockquote>
-
-### Advantages to using page bundles
-
-The image below is part of the bundle of this page, and is located at `content/post/bundle/building.png`. Because it's within this page's bundle, the markup for the image only has to specify the image's filename, `building.png`.
-
-![A building](building.png)
-
-If you ever change the name of the directory in which this Markdown file and the image reside, the reference to the image would not need to be updated.
-
-In addition to more cleanly organizing your content and related assets, when using page bundles, **Hugo Clarity will automatically generate markup for modern image formats**, which are smaller in file size.
-
-For instance, when you reference an image like `building.png`, Hugo Clarity will check to see if the same image (based on filename) exists in [WebP](https://en.wikipedia.org/wiki/WebP), [AVIF](https://en.wikipedia.org/wiki/AVIF) or [JXL](https://en.wikipedia.org/wiki/JPEG_XL) formats. If you inspect the image above, you'll see a `<source>` element for `building.webp`, because that file is also present. Hugo Clarity will only include the markup if these images exist.
-
-Browsers that [support these formats and the `<picture>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture#the_type_attribute) will load them, while browsers that do not will fall-back to the default image. [Read more about this process.](https://github.com/chipzoller/hugo-clarity#support-for-modern-image-formats)
-
-Finally, note that page assets can be further managed and refined [within the page's front matter](https://gohugo.io/content-management/page-resources/#page-resources-metadata) if you wish, and are not limited to images alone.
-
-### Disadvantages to using page bundles
-
-Page resources in a bundle are only available to the page with which they are bundled &#8212; that means you can't include an image with one page and then reference it from another.
-
-Images that are being used in multiple places are more appropriate for your [Hugo `assets` directory](https://gohugo.io/hugo-pipes/introduction/). Unlike files in the Hugo `static` directory, files in the `assets` directory can be run through Hugo Pipes, which [includes image processing](https://gohugo.io/content-management/image-processing/).
+Thanks for taking a look at my home lab! Feel free to reach out if you have any questions or want to share your own lab setups—I'd love to hear from you!
