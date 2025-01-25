@@ -4,12 +4,10 @@
   lang="en"
   data-figures=""
   
-    class="page"
-  
   
   >
   <head>
-<title>Home Lab Setup | PS-Cloudlabs</title>
+<title>Vsphere | PS-Cloudlabs</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -19,56 +17,25 @@
 
 
 
-  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Introduction of my small and ever growing home lab setup." />
+<meta name="description" content="" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Home Lab Setup" />
+<meta name="twitter:title" content="Vsphere" />
 <meta name="twitter:image" content="https://p3t35.github.io/ps-cloudlabs/images/thumbnail.png"/>
-<meta property="og:url" content="https://p3t35.github.io/ps-cloudlabs/post/home-lab-setup/" />
-<meta property="og:title" content="Home Lab Setup" />
-<meta property="og:description" content="Introduction of my small and ever growing home lab setup." />
+<meta property="og:url" content="https://p3t35.github.io/ps-cloudlabs/tags/vsphere/" />
+<meta property="og:title" content="Vsphere" />
+<meta property="og:description" content="" />
 <meta property="og:image" content="https://p3t35.github.io/ps-cloudlabs/images/thumbnail.png" />
-  <meta name="keywords" content="homelab" />
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "BlogPosting",
-      "mainEntityOfPage":"https:\/\/p3t35.github.io\/ps-cloudlabs\/post\/home-lab-setup\/",
-      "name": "PS-Cloudlabs",
-      "headline": "Home Lab Setup",
-      "description": "Introduction of my small and ever growing home lab setup.",
-      "url": "https:\/\/p3t35.github.io\/ps-cloudlabs\/post\/home-lab-setup\/",
-      "datePublished": "2025-01-08T00:00:00Z",
-      "dateModified": "2025-01-08T00:00:00Z",
-      "keywords": ["homelab"],
-      "author": {
-        "@type": "Person",
-        "name": "map[name:Jane Doe]"
-      },
-      "image":{
-        "@type":"ImageObject",
-        "url": "https:\/\/p3t35.github.io\/ps-cloudlabs\/images\/thumbnail.png"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "logo": {
-          "@type":"ImageObject",
-          "url": "https:\/\/p3t35.github.io\/ps-cloudlabs\/logos\/logo.png"
-        },
-        "name": "PS-Cloudlabs"
-      }
-    }
-  </script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://p3t35.github.io/ps-cloudlabs/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://p3t35.github.io/ps-cloudlabs/icons/favicon-32x32.png">
 <link rel="manifest" href="https://p3t35.github.io/ps-cloudlabs/icons/site.webmanifest">
 
-<link rel="canonical" href="https://p3t35.github.io/ps-cloudlabs/post/home-lab-setup/">
+<link rel="canonical" href="https://p3t35.github.io/ps-cloudlabs/tags/vsphere/">
+<link rel="alternate" type="application/rss+xml" href="https://p3t35.github.io/ps-cloudlabs/tags/vsphere/index.xml" title="PS-Cloudlabs" />
 
 
 
@@ -148,10 +115,19 @@
 </header>
 
     <main>
-  
+
+
+
 <div class="grid-inverse wrap content">
-  <article class="post_content">
-    <h1 class="post_title">Home Lab Setup</h1>
+  <div>
+    <ul class="posts" id="posts">
+        <li class="post_item">
+  <div class="excerpt">
+    <div class="excerpt_header">
+      <h3 class="post_link">
+        <a href="https://p3t35.github.io/ps-cloudlabs/setup/" title="Setup">Setup</a>
+      </h3>
+      
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -159,43 +135,39 @@
 </svg>
 </span>
     <span class="post_date">
-      Jan 8, 2025</span>
-    <span class="post_time"> · 2 min read</span><span>&nbsp;· <a href='https://p3t35.github.io/ps-cloudlabs/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
+      Jan 25, 2025</span>
+    <span class="post_time"> · 0 min read</span><span>&nbsp;· <a href='https://p3t35.github.io/ps-cloudlabs/tags/lab/' title="lab" class="post_tag button button_translucent">lab
+        </a><a href='https://p3t35.github.io/ps-cloudlabs/tags/vsphere/' title="vsphere" class="post_tag button button_translucent">vsphere
+        </a><a href='https://p3t35.github.io/ps-cloudlabs/tags/powershell/' title="powershell" class="post_tag button button_translucent">powershell
+        </a><a href='https://p3t35.github.io/ps-cloudlabs/tags/intelnuc/' title="intelnuc" class="post_tag button button_translucent">intelnuc
         </a>
     </span>
   </div>
 
-    <div class="post_body"><h1 id="my-current-lab-setup">My Current Lab Setup</h1>
-<p>When it comes to building my home lab, my main goal is to keep things simple, low-cost, and low-overhead. It’s a place where I can experiment with new technologies, test out virtual environments, and try out different configurations—without draining my wallet or disrupting the rest of the household. Here’s a breakdown of my current setup and how I’ve optimized it for efficiency and independence.</p>
-<h2 id="the-hardware">The Hardware</h2>
-<p>My lab is built around <strong>two Intel NUCs</strong>, each equipped with <strong>64GB of RAM</strong>. These compact machines provide enough horsepower to run a variety of workloads, but they’re small enough to keep everything running quietly and with minimal energy consumption.</p>
-<p>Given that the goal of this lab is to be cost-effective, I’ve kept the hardware fairly modest. But the best part? The lab is <strong>completely independent from our home network</strong>, so if something breaks or if I’m running some resource-heavy workloads, <strong>Netflix and the rest of the household’s devices still work without interruption</strong>. It's the perfect balance between experimenting with new tech and maintaining a smooth home environment.</p>
-<h2 id="room-for-growth">Room for Growth</h2>
-<p>While my lab setup is functional for now, there’s always room for improvement. There’s still plenty of capacity for growth, and new hardware is always welcome—whether it's adding more storage, integrating additional virtual machines, or even expanding to more powerful components like additional NUCs or networking gear. But like with any hobby or project, <strong>everything in due time</strong>. I’m not in a rush to make the lab bigger or more complex; I’m more focused on optimizing what I have and gradually expanding as needed.</p>
-<h2 id="why-this-setup-works-for-me">Why This Setup Works for Me</h2>
-<p>This lab setup strikes the perfect balance between cost and functionality. The <strong>Intel NUCs</strong> are compact and efficient, and they’re flexible enough to run a variety of virtualized environments without creating too much overhead. Plus, the fact that the lab is completely isolated from the rest of the home network means that I can take risks, experiment, and tinker without worrying about affecting our daily activities.</p>
-<p>In the future, I’m excited to keep building this lab. Whether it’s adding automation, testing cloud solutions, there’s always room to improve and learn. For now, though, I’m happy with this setup and looking forward to where it can take me next.</p>
-<hr>
-<p>Thanks for taking a look at my home lab! Feel free to reach out if you have any questions or want to share your own lab setups—I'd love to hear from you!</p>
+    </div>
+      <div class="excerpt_footer">
+        <div class="pale">
+          
+            <p></p>
+          
+          <br>
+          <a href="https://p3t35.github.io/ps-cloudlabs/setup/" title="Read More" class="excerpt_more button">Read More</a>
+        </div>
+      </div>
+    </div>
+  </li>
 
-    </div><div class="post_comments">
-  
-  
-  
-  
-</div>
-
-
-
-
-  </article>
+      <li>
+      </li>
+    </ul>
+  </div>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='tags'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -250,8 +222,9 @@
   </section>
 </aside>
 
-  
 </div>
+
+
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
