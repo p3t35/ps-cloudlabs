@@ -20,15 +20,15 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Introduction of my small and ever growing home lab setup." />
+<meta name="description" content="A short introduction of my current and growing home lab setup." />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="Home Lab Setup" />
-<meta name="twitter:image" content="http://localhost:1313/images/thumbnail.png"/>
+<meta name="twitter:image" content="http://localhost:1313/post/home-lab-setup/homelab-setup-sw.jpeg"/>
 <meta property="og:url" content="http://localhost:1313/post/home-lab-setup/" />
 <meta property="og:title" content="Home Lab Setup" />
-<meta property="og:description" content="Introduction of my small and ever growing home lab setup." />
-<meta property="og:image" content="http://localhost:1313/images/thumbnail.png" />
+<meta property="og:description" content="A short introduction of my current and growing home lab setup." />
+<meta property="og:image" content="http://localhost:1313/post/home-lab-setup/homelab-setup-sw.jpeg" />
   <meta name="keywords" content="homelab" />
   <script type="application/ld+json">
     {
@@ -37,10 +37,10 @@
       "mainEntityOfPage":"http:\/\/localhost:1313\/post\/home-lab-setup\/",
       "name": "PS-Cloudlabs",
       "headline": "Home Lab Setup",
-      "description": "Introduction of my small and ever growing home lab setup.",
+      "description": "A short introduction of my current and growing home lab setup.",
       "url": "http:\/\/localhost:1313\/post\/home-lab-setup\/",
-      "datePublished": "2025-01-08T00:00:00Z",
-      "dateModified": "2025-01-08T00:00:00Z",
+      "datePublished": "2025-01-26T00:00:00Z",
+      "dateModified": "2025-01-26T00:00:00Z",
       "keywords": ["homelab"],
       "author": {
         "@type": "Person",
@@ -48,7 +48,7 @@
       },
       "image":{
         "@type":"ImageObject",
-        "url": "http:\/\/localhost:1313\/images\/thumbnail.png"
+        "url": "http:\/\/localhost:1313\/post\/home-lab-setup\/homelab-setup-sw.jpeg"
       },
       "publisher": {
         "@type": "Organization",
@@ -156,24 +156,84 @@
 </svg>
 </span>
     <span class="post_date">
-      Jan 8, 2025</span>
-    <span class="post_time"> · 2 min read</span><span>&nbsp;· <a href='http://localhost:1313/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
+      Jan 26, 2025</span>
+    <span class="post_time"> · 3 min read</span><span>&nbsp;· <a href='http://localhost:1313/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
         </a>
     </span>
   </div>
 
     <div class="post_body"><h1 id="my-current-lab-setup">My Current Lab Setup</h1>
 <p>When it comes to building my home lab, my main goal is to keep things simple, low-cost, and low-overhead. It’s a place where I can experiment with new technologies, test out virtual environments, and try out different configurations—without draining my wallet or disrupting the rest of the household. Here’s a breakdown of my current setup and how I’ve optimized it for efficiency and independence.</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Homelab Network"
+      
+        class="image_figure image_internal image_processed"
+        width="552"
+        height="387"
+        src="http://localhost:1313/post/home-lab-setup/homelab-network-v1.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>The primary goal of this setup is to create an isolated environment where everything can be tested without risk to the outside network. To achieve this, all traffic within the homelab is routed through a virtual instance of <strong>OpnSense</strong>.</p>
+<p>Access to the lab is strictly controlled; I connect exclusively via <strong>RDP</strong> to a Linux <strong>jumphost</strong>. This ensures that the homelab remains fully isolated from external systems and networks.</p>
+<p>In a future post, I will dive deeper into the configuration of <strong>OpnSense</strong> and the internal network setup.</p>
 <h2 id="the-hardware">The Hardware</h2>
 <p>My lab is built around <strong>two Intel NUCs</strong>, each equipped with <strong>64GB of RAM</strong>. These compact machines provide enough horsepower to run a variety of workloads, but they’re small enough to keep everything running quietly and with minimal energy consumption.</p>
-<p>Given that the goal of this lab is to be cost-effective, I’ve kept the hardware fairly modest. But the best part? The lab is <strong>completely independent from our home network</strong>, so if something breaks or if I’m running some resource-heavy workloads, <strong>Netflix and the rest of the household’s devices still work without interruption</strong>. It's the perfect balance between experimenting with new tech and maintaining a smooth home environment.</p>
+<p>But the best part? The lab is <strong>completely independent from our home network</strong>, so if something breaks or if I’m running some resource-heavy workloads, <strong>Netflix and the rest of the household’s devices still work without interruption</strong>. It's the perfect balance between experimenting with new tech and maintaining a smooth home environment.</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Homelab Setup"
+      
+        class="image_figure image_internal image_processed"
+        width="4030"
+        height="2235"
+        src="http://localhost:1313/post/home-lab-setup/homelab-setup-sw.jpeg"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
 <h2 id="room-for-growth">Room for Growth</h2>
 <p>While my lab setup is functional for now, there’s always room for improvement. There’s still plenty of capacity for growth, and new hardware is always welcome—whether it's adding more storage, integrating additional virtual machines, or even expanding to more powerful components like additional NUCs or networking gear. But like with any hobby or project, <strong>everything in due time</strong>. I’m not in a rush to make the lab bigger or more complex; I’m more focused on optimizing what I have and gradually expanding as needed.</p>
 <h2 id="why-this-setup-works-for-me">Why This Setup Works for Me</h2>
 <p>This lab setup strikes the perfect balance between cost and functionality. The <strong>Intel NUCs</strong> are compact and efficient, and they’re flexible enough to run a variety of virtualized environments without creating too much overhead. Plus, the fact that the lab is completely isolated from the rest of the home network means that I can take risks, experiment, and tinker without worrying about affecting our daily activities.</p>
 <p>In the future, I’m excited to keep building this lab. Whether it’s adding automation, testing cloud solutions, there’s always room to improve and learn. For now, though, I’m happy with this setup and looking forward to where it can take me next.</p>
 <hr>
-<p>Thanks for taking a look at my home lab! Feel free to reach out if you have any questions or want to share your own lab setups—I'd love to hear from you!</p>
+<p>I created a page where I track the current status of my homelab with network diagrams, pictures and BOMs.</p>
+<p><a href="http://localhost:1313/setup/" title="Homelab Setup">Setup</a></p>
 
     </div><div class="post_comments">
   
@@ -218,26 +278,11 @@
       <nav class="tags_nav">
         <a href='http://localhost:1313/tags/homelab/' class="post_tag button button_translucent" title="homelab">
           HOMELAB
-          <span class="button_tally">1</span>
+          <span class="button_tally">2</span>
         </a>
         
         <a href='http://localhost:1313/tags/intelnuc/' class="post_tag button button_translucent" title="intelnuc">
           INTELNUC
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/lab/' class="post_tag button button_translucent" title="lab">
-          LAB
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/powershell/' class="post_tag button button_translucent" title="powershell">
-          POWERSHELL
-          <span class="button_tally">1</span>
-        </a>
-        
-        <a href='http://localhost:1313/tags/vsphere/' class="post_tag button button_translucent" title="vsphere">
-          VSPHERE
           <span class="button_tally">1</span>
         </a>
         
