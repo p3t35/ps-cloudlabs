@@ -5,6 +5,9 @@ summary: "A short introduction of my current and growing home lab setup."
 date: '2025-01-26'
 aliases:
   - home-lab-setup
+tags:
+  - homelab
+  - intelnuc
 author: 'Peter Summa'
 
 #featureImage: 'homelab-setup-sw.jpeg' # Top image on post.
