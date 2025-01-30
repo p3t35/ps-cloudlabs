@@ -4,10 +4,12 @@
   lang="en"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Intelnuc | PS-Cloudlabs</title>
+<title>Network Setup | PS-Cloudlabs</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,25 +19,56 @@
 
 
 
+  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="Virtual Firewall and Networking Setup for my Homelab" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Intelnuc" />
-<meta name="twitter:image" content="https://ps-cloudlabs.com/images/thumbnail.png"/>
-<meta property="og:url" content="https://ps-cloudlabs.com/tags/intelnuc/" />
-<meta property="og:title" content="Intelnuc" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="https://ps-cloudlabs.com/images/thumbnail.png" />
+<meta name="twitter:title" content="Network Setup" />
+<meta name="twitter:image" content="https://ps-cloudlabs.com/post/network-setup/homelab-setup-sw.jpeg"/>
+<meta property="og:url" content="https://ps-cloudlabs.com/post/network-setup/" />
+<meta property="og:title" content="Network Setup" />
+<meta property="og:description" content="Virtual Firewall and Networking Setup for my Homelab" />
+<meta property="og:image" content="https://ps-cloudlabs.com/post/network-setup/homelab-setup-sw.jpeg" />
+  <meta name="keywords" content="homelab,opensense,networking,vsphere" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage":"https:\/\/ps-cloudlabs.com\/post\/network-setup\/",
+      "name": "PS-Cloudlabs",
+      "headline": "Network Setup",
+      "description": "Virtual Firewall and Networking Setup for my Homelab",
+      "url": "https:\/\/ps-cloudlabs.com\/post\/network-setup\/",
+      "datePublished": "2025-01-30T00:00:00Z",
+      "dateModified": "2025-01-30T00:00:00Z",
+      "keywords": ["homelab","opensense","networking","vsphere"],
+      "author": {
+        "@type": "Person",
+        "name": "map[name:Jane Doe]"
+      },
+      "image":{
+        "@type":"ImageObject",
+        "url": "https:\/\/ps-cloudlabs.com\/post\/network-setup\/homelab-setup-sw.jpeg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type":"ImageObject",
+          "url": "https:\/\/ps-cloudlabs.com\/logos\/logo.png"
+        },
+        "name": "PS-Cloudlabs"
+      }
+    }
+  </script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://ps-cloudlabs.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ps-cloudlabs.com/icons/favicon-32x32.png">
 <link rel="manifest" href="https://ps-cloudlabs.com/icons/site.webmanifest">
 
-<link rel="canonical" href="https://ps-cloudlabs.com/tags/intelnuc/">
-<link rel="alternate" type="application/rss+xml" href="https://ps-cloudlabs.com/tags/intelnuc/index.xml" title="PS-Cloudlabs" />
+<link rel="canonical" href="https://ps-cloudlabs.com/post/network-setup/">
 
 
 
@@ -115,19 +148,10 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/setup/" title="Setup">Setup</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">Network Setup</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -135,49 +159,193 @@
 </svg>
 </span>
     <span class="post_date">
-      Jan 26, 2025</span>
-    <span class="post_time"> · 1 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
-        </a><a href='https://ps-cloudlabs.com/tags/intelnuc/' title="intelnuc" class="post_tag button button_translucent">intelnuc
+      Jan 30, 2025</span>
+    <span class="post_time"> · 3 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
+        </a><a href='https://ps-cloudlabs.com/tags/opensense/' title="opensense" class="post_tag button button_translucent">opensense
+        </a><a href='https://ps-cloudlabs.com/tags/networking/' title="networking" class="post_tag button button_translucent">networking
+        </a><a href='https://ps-cloudlabs.com/tags/vsphere/' title="vsphere" class="post_tag button button_translucent">vsphere
         </a>
     </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <h2 id="hardware">Hardware</h2>
+    <div class="post_body"><h1 id="opensense">Opensense</h1>
+<p>To maintain a clear separation between my homelab and home network, I needed a firewall. A physical firewall wasn’t an option since I wanted to keep the lab compact. This left me with the choice of a virtual firewall. After researching, I narrowed down the options to three main solutions: pfSense, OPNsense, and VyOS.</p>
+<p>Previously, I had experience using pfSense for virtual firewalling. For my homelab, I decided to try OPNsense to gain familiarity with it. While VyOS is also on my radar for the future, my immediate focus was on getting OPNsense up and running.</p>
+<p>This article focuses on configuring OPNsense for a homelab setup. I won’t delve into the detailed installation process, as many other blogs already cover that topic.</p>
+<p>Here’s an overview of my network configuration:</p>
 <p>
   <figure>
   <picture>
-<pre><code>&lt;img
-  loading=&quot;lazy&quot;
-  decoding=&quot;async&quot;
-  alt=&quot;Homelab Setup&quot;
-  
-    class=&quot;image_figure image_internal image_processed&quot;
-    width=&quot;4032&quot;
-    height=&quot;3024&quot; …&lt;/picture&gt;&lt;/figure&gt;&lt;/p&gt;
-</code></pre>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/setup/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
 
-      <li>
-      </li>
-    </ul>
-  </div>
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="homelab Network"
+      
+        class="image_figure image_internal image_processed"
+        width="461"
+        height="459"
+        src="https://ps-cloudlabs.com/post/network-setup/homelab-network.jpg"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>The OPNsense virtual machine (VM) has an &quot;external&quot; IP address connected to the home network. On the LAN side, it uses multiple VLAN interfaces. This setup enables the creation of distinct networks, allowing me to simulate a &quot;real-world&quot; environment. It’s particularly useful for mirroring customer environments with various VLANs.</p>
+<p>All external traffic is NATed through the external IP address to access the internet and other resources. For management and access, I rely on a Linux jump host with xrdp installed. On the OPNsense side, I configured DNAT rules to forward traffic for RDP (port 3389) and SSH (port 22) from the external IP to the internal IP of the jump host. This approach ensures I can access the lab from any device.
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Opensense DNAT"
+      
+        class="image_figure image_internal image_processed"
+        width="2794"
+        height="772"
+        src="https://ps-cloudlabs.com/post/network-setup/opensense-dnat.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>To configure the &quot;LAN&quot; interface on OPNsense, I created a port group that trunks all VLANs, as shown in the screenshot below:
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Trunk Portgroup"
+      
+        class="image_figure image_internal image_processed"
+        width="1632"
+        height="470"
+        src="https://ps-cloudlabs.com/post/network-setup/trunk-portgroup.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<h1 id="esxi-networking">ESXi Networking</h1>
+<p>Next, let’s look at the networking setup for the two ESXi hosts in the lab.</p>
+<p>Both hosts utilize vSwitch0, which connects the ESXi hosts and the OPNsense VM to the home network. For internal homelab traffic, I created a Distributed Switch. This switch includes the trunk port group for OPNsense and VLAN-tagged port groups for services like vCenter, NSX Manager, and other VMs.</p>
+<p>Using a Distributed Switch is essential for enabling MAC learning, a feature not available on standard switches. MAC learning is particularly useful when running nested ESXi hosts. For more details on this topic, check out the blog post by my colleague Daniel Krieger, which highlights the advantages of MAC learning over promiscuous mode:</p>
+<p><a href="https://sdn-warrior.org/posts/mac-learning/">MAC Learning is your friend</a></p>
+<p>The internal Distributed Switch uses a direct connection between the two ESXi hosts, providing a 2.5 Gbps connection for all internal traffic, VM traffic, and vMotion. Additionally, the ESXi hosts have a vmkernel interface (vmk1) on this Distributed Switch.</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="ESXi vSwitch"
+      
+        class="image_figure image_internal image_processed"
+        width="1740"
+        height="1054"
+        src="https://ps-cloudlabs.com/post/network-setup/vSwitch-overview.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<h1 id="esxi-usb-nic-driver">ESXi USB NIC Driver</h1>
+<p>If you’ve examined the setup closely, you might have noticed a USB NIC attached to one of the ESXi hosts. This is because one NUC has 2 x 2.5 Gbps ports, while the other has 1 x 2.5 Gbps port plus an attached 1 Gbps USB NIC.</p>
+<p>To enable the USB NIC, I installed the USB Network Native Driver for ESXi, a community-provided fling.</p>
+<p>You can find more details about the USB Network Native Driver for ESXi here:
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="USB Network Fling"
+      
+        class="image_figure image_internal image_processed"
+        width="260"
+        height="529"
+        src="https://ps-cloudlabs.com/post/network-setup/fling.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+
+<a href="https://community.broadcom.com/flings/home">https://community.broadcom.com/flings/home</a></p>
+
+    </div><div class="post_comments">
+  
+  
+  
+  
+</div>
+
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -235,9 +403,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
