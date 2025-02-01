@@ -1,8 +1,8 @@
 ---
 title: 'Network Setup'
-description: 'Virtual Firewall and Networking Setup for my Homelab'
-summary: "Virtual Firewall and Networking Setup for my Homelab"
-date: '2025-01-30'
+description: 'Virtual Firewall (OPNsense) and Networking Setup for my Homelab'
+summary: "Virtual Firewall (OPNsense) and Networking Setup for my Homelab"
+date: '2025-02-01'
 tags:
   - homelab
   - intelnuc
@@ -15,8 +15,8 @@ author: 'Peter Summa'
 #featureImage: 'homelab-setup-sw.jpeg' # Top image on post.
 # featureImageAlt: 'Description of image' # Alternative text for featured image.
 # featureImageCap: 'This is the featured image.' # Caption (optional).
-thumbnail: 'homelab-setup-sw.jpeg' # Image in lists of posts.
-shareImage: 'homelab-setup-sw.jpeg' # For SEO and social media snippets.
+thumbnail: 'network-thumb.jpg' # Image in lists of posts.
+shareImage: 'network-thumb.jpg' # For SEO and social media snippets.
 
 tags:
   - homelab
@@ -51,7 +51,7 @@ Next, let’s look at the networking setup for the two ESXi hosts in the lab.
 
 Both hosts utilize vSwitch0, which connects the ESXi hosts and the OPNsense VM to the home network. For internal homelab traffic, I created a Distributed Switch. This switch includes the trunk port group for OPNsense and VLAN-tagged port groups for services like vCenter, NSX Manager, and other VMs.
 
-Using a Distributed Switch is essential for enabling MAC learning, a feature not available on standard switches. MAC learning is particularly useful when running nested ESXi hosts. For more details on this topic, check out the blog post by my colleague Daniel Krieger, which highlights the advantages of MAC learning over promiscuous mode:
+Using a Distributed Switch is essential for enabling MAC learning, a feature not available on standard vSwitches. MAC learning is particularly useful when running nested ESXi hosts. For more details on this topic, check out the blog post by my colleague Daniel Krieger, which highlights the advantages of MAC learning over promiscuous mode:
 
 [MAC Learning is your friend](https://sdn-warrior.org/posts/mac-learning/)
 
@@ -60,7 +60,7 @@ The internal Distributed Switch uses a direct connection between the two ESXi ho
 ![ESXi vSwitch](vSwitch-overview.png)
 
 # ESXi USB NIC Driver
-If you’ve examined the setup closely, you might have noticed a USB NIC attached to one of the ESXi hosts. This is because one NUC has 2 x 2.5 Gbps ports, while the other has 1 x 2.5 Gbps port plus an attached 1 Gbps USB NIC.
+If you’ve examined the [setup](https://ps-cloudlabs.com/setup/) closely, you might have noticed a USB NIC attached to one of the ESXi hosts. This is because one NUC has 2 x 2.5 Gbps ports, while the other has 1 x 2.5 Gbps port plus an attached 1 Gbps USB NIC.
 
 To enable the USB NIC, I installed the USB Network Native Driver for ESXi, a community-provided fling.
 

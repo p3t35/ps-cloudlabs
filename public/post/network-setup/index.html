@@ -20,15 +20,15 @@
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="Virtual Firewall and Networking Setup for my Homelab" />
+<meta name="description" content="Virtual Firewall (OPNsense) and Networking Setup for my Homelab" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content="Network Setup" />
-<meta name="twitter:image" content="http://localhost:1313/post/network-setup/homelab-setup-sw.jpeg"/>
+<meta name="twitter:image" content="http://localhost:1313/post/network-setup/network-thumb.jpg"/>
 <meta property="og:url" content="http://localhost:1313/post/network-setup/" />
 <meta property="og:title" content="Network Setup" />
-<meta property="og:description" content="Virtual Firewall and Networking Setup for my Homelab" />
-<meta property="og:image" content="http://localhost:1313/post/network-setup/homelab-setup-sw.jpeg" />
+<meta property="og:description" content="Virtual Firewall (OPNsense) and Networking Setup for my Homelab" />
+<meta property="og:image" content="http://localhost:1313/post/network-setup/network-thumb.jpg" />
   <meta name="keywords" content="homelab,opensense,networking,vsphere" />
   <script type="application/ld+json">
     {
@@ -37,10 +37,10 @@
       "mainEntityOfPage":"http:\/\/localhost:1313\/post\/network-setup\/",
       "name": "PS-Cloudlabs",
       "headline": "Network Setup",
-      "description": "Virtual Firewall and Networking Setup for my Homelab",
+      "description": "Virtual Firewall (OPNsense) and Networking Setup for my Homelab",
       "url": "http:\/\/localhost:1313\/post\/network-setup\/",
-      "datePublished": "2025-01-30T00:00:00Z",
-      "dateModified": "2025-01-30T00:00:00Z",
+      "datePublished": "2025-02-01T00:00:00Z",
+      "dateModified": "2025-02-01T00:00:00Z",
       "keywords": ["homelab","opensense","networking","vsphere"],
       "author": {
         "@type": "Person",
@@ -48,7 +48,7 @@
       },
       "image":{
         "@type":"ImageObject",
-        "url": "http:\/\/localhost:1313\/post\/network-setup\/homelab-setup-sw.jpeg"
+        "url": "http:\/\/localhost:1313\/post\/network-setup\/network-thumb.jpg"
       },
       "publisher": {
         "@type": "Organization",
@@ -156,7 +156,7 @@
 </svg>
 </span>
     <span class="post_date">
-      Jan 30, 2025</span>
+      Feb 1, 2025</span>
     <span class="post_time"> · 3 min read</span><span>&nbsp;· <a href='http://localhost:1313/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
         </a><a href='http://localhost:1313/tags/opensense/' title="opensense" class="post_tag button button_translucent">opensense
         </a><a href='http://localhost:1313/tags/networking/' title="networking" class="post_tag button button_translucent">networking
@@ -260,7 +260,7 @@
 <h1 id="esxi-networking">ESXi Networking</h1>
 <p>Next, let’s look at the networking setup for the two ESXi hosts in the lab.</p>
 <p>Both hosts utilize vSwitch0, which connects the ESXi hosts and the OPNsense VM to the home network. For internal homelab traffic, I created a Distributed Switch. This switch includes the trunk port group for OPNsense and VLAN-tagged port groups for services like vCenter, NSX Manager, and other VMs.</p>
-<p>Using a Distributed Switch is essential for enabling MAC learning, a feature not available on standard switches. MAC learning is particularly useful when running nested ESXi hosts. For more details on this topic, check out the blog post by my colleague Daniel Krieger, which highlights the advantages of MAC learning over promiscuous mode:</p>
+<p>Using a Distributed Switch is essential for enabling MAC learning, a feature not available on standard vSwitches. MAC learning is particularly useful when running nested ESXi hosts. For more details on this topic, check out the blog post by my colleague Daniel Krieger, which highlights the advantages of MAC learning over promiscuous mode:</p>
 <p><a href="https://sdn-warrior.org/posts/mac-learning/">MAC Learning is your friend</a></p>
 <p>The internal Distributed Switch uses a direct connection between the two ESXi hosts, providing a 2.5 Gbps connection for all internal traffic, VM traffic, and vMotion. Additionally, the ESXi hosts have a vmkernel interface (vmk1) on this Distributed Switch.</p>
 <p>
@@ -292,7 +292,7 @@
 </figure>
 </p>
 <h1 id="esxi-usb-nic-driver">ESXi USB NIC Driver</h1>
-<p>If you’ve examined the setup closely, you might have noticed a USB NIC attached to one of the ESXi hosts. This is because one NUC has 2 x 2.5 Gbps ports, while the other has 1 x 2.5 Gbps port plus an attached 1 Gbps USB NIC.</p>
+<p>If you’ve examined the <a href="https://ps-cloudlabs.com/setup/">setup</a> closely, you might have noticed a USB NIC attached to one of the ESXi hosts. This is because one NUC has 2 x 2.5 Gbps ports, while the other has 1 x 2.5 Gbps port plus an attached 1 Gbps USB NIC.</p>
 <p>To enable the USB NIC, I installed the USB Network Native Driver for ESXi, a community-provided fling.</p>
 <p>You can find more details about the USB Network Native Driver for ESXi here:
 
