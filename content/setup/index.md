@@ -1,11 +1,14 @@
 ---
 title: "Setup"
 description: "My Current Homelab setup"
+summary: "My Current Homelab setup"
 date: "2025-01-26"
 author: "Peter Summa"
 tags:
   - homelab
   - intelnuc
+thumbnail: 'homelab-setup-sw.jpeg' # Image in lists of posts.
+shareImage: 'homelab-setup-sw.jpeg' # For SEO and social media snippets.
 ---
 
 ## Hardware
