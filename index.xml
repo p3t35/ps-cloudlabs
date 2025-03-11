@@ -7,7 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>ps-cloudlabs | Peter Summa</copyright>
-    <lastBuildDate>Sat, 01 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ps-cloudlabs.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ps-cloudlabs.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automated VCF Deployment</title>
+      <link>https://ps-cloudlabs.com/post/automated-vcf-deployment/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://ps-cloudlabs.com/post/automated-vcf-deployment/</guid>
+      <description>
+        
+          
+            Deploying VCF - the automated way with 2 NUCs
+          
+          
+        
+      </description>
+    </item>
+    
     <item>
       <title>Network Setup</title>
       <link>https://ps-cloudlabs.com/post/network-setup/</link>

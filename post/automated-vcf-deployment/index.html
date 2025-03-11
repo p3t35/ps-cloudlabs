@@ -4,10 +4,12 @@
   lang="en"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Tags | PS-Cloudlabs</title>
+<title>Automated VCF Deployment | PS-Cloudlabs</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,25 +19,56 @@
 
 
 
+  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="Deploying VCF - the automated way with 2 NUCs" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Tags" />
-<meta name="twitter:image" content="https://ps-cloudlabs.com/images/thumbnail.png"/>
-<meta property="og:url" content="https://ps-cloudlabs.com/tags/" />
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="https://ps-cloudlabs.com/images/thumbnail.png" />
+<meta name="twitter:title" content="Automated VCF Deployment" />
+<meta name="twitter:image" content="https://ps-cloudlabs.com/post/automated-vcf-deployment/network-thumb.jpg"/>
+<meta property="og:url" content="https://ps-cloudlabs.com/post/automated-vcf-deployment/" />
+<meta property="og:title" content="Automated VCF Deployment" />
+<meta property="og:description" content="Deploying VCF - the automated way with 2 NUCs" />
+<meta property="og:image" content="https://ps-cloudlabs.com/post/automated-vcf-deployment/network-thumb.jpg" />
+  <meta name="keywords" content="homelab,intelnuc,vcf,vsphere,esxi,powershell,powercli" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage":"https:\/\/ps-cloudlabs.com\/post\/automated-vcf-deployment\/",
+      "name": "PS-Cloudlabs",
+      "headline": "Automated VCF Deployment",
+      "description": "Deploying VCF - the automated way with 2 NUCs",
+      "url": "https:\/\/ps-cloudlabs.com\/post\/automated-vcf-deployment\/",
+      "datePublished": "2025-02-22T00:00:00Z",
+      "dateModified": "2025-02-22T00:00:00Z",
+      "keywords": ["homelab","intelnuc","vcf","vsphere","esxi","powershell","powercli"],
+      "author": {
+        "@type": "Person",
+        "name": "map[name:Jane Doe]"
+      },
+      "image":{
+        "@type":"ImageObject",
+        "url": "https:\/\/ps-cloudlabs.com\/post\/automated-vcf-deployment\/network-thumb.jpg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type":"ImageObject",
+          "url": "https:\/\/ps-cloudlabs.com\/logos\/logo.png"
+        },
+        "name": "PS-Cloudlabs"
+      }
+    }
+  </script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://ps-cloudlabs.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ps-cloudlabs.com/icons/favicon-32x32.png">
 <link rel="manifest" href="https://ps-cloudlabs.com/icons/site.webmanifest">
 
-<link rel="canonical" href="https://ps-cloudlabs.com/tags/">
-<link rel="alternate" type="application/rss+xml" href="https://ps-cloudlabs.com/tags/index.xml" title="PS-Cloudlabs" />
+<link rel="canonical" href="https://ps-cloudlabs.com/post/automated-vcf-deployment/">
 
 
 
@@ -123,19 +156,10 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/esxi/" title="Esxi">Esxi</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">Automated VCF Deployment</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -144,281 +168,226 @@
 </span>
     <span class="post_date">
       Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
+    <span class="post_time"> · 4 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
+        </a><a href='https://ps-cloudlabs.com/tags/intelnuc/' title="intelnuc" class="post_tag button button_translucent">intelnuc
+        </a><a href='https://ps-cloudlabs.com/tags/vcf/' title="vcf" class="post_tag button button_translucent">vcf
+        </a><a href='https://ps-cloudlabs.com/tags/vsphere/' title="vsphere" class="post_tag button button_translucent">vsphere
+        </a><a href='https://ps-cloudlabs.com/tags/esxi/' title="esxi" class="post_tag button button_translucent">esxi
+        </a><a href='https://ps-cloudlabs.com/tags/powershell/' title="powershell" class="post_tag button button_translucent">powershell
+        </a><a href='https://ps-cloudlabs.com/tags/powercli/' title="powercli" class="post_tag button button_translucent">powercli
+        </a>
+    </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/esxi/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    <div class="post_body"><h1 id="deploying-vmware-cloud-foundation-vcf-on-a-small-homelab--is-it-possible">Deploying VMware Cloud Foundation (VCF) on a Small Homelab – Is It Possible?</h1>
+<p>Looking at the official requirements for VMware Cloud Foundation (VCF), they seem excessive for a small homelab setup. But is it still possible? Let's give it a try—the automated way!</p>
+<h2 id="automating-the-vcf-deployment">Automating the VCF Deployment</h2>
+<p>Deploying VCF manually is a time-consuming task. Preparing virtual ESXi hosts, configuring networking, and setting up storage can take hours. I wanted a more efficient solution—a script that could deploy VCF with just <strong>one click</strong>.</p>
+<p>That's when I came across <a href="https://williamlam.com/2024/01/automated-lab-deployment-script-updated-to-support-vmware-cloud-foundation-vcf-5-1.html">William Lam’s blog post</a> about VCF deployment. His PowerShell script automates most of the setup, making the process much easier. However, there was one major limitation:</p>
+<ul>
+<li>The script requires a <strong>shared datastore</strong> between the ESXi hosts, typically a vSAN datastore.</li>
+<li>Since I only have <strong>two Intel NUCs</strong>, vSAN wasn't an option due to the missing third witness node.</li>
+<li>I also don’t have the necessary storage for an <strong>NFS or iSCSI share</strong>.</li>
+</ul>
+<h2 id="adapting-the-script-for-my-setup">Adapting the Script for My Setup</h2>
+<p>To make this work, I had to modify the script to fit my environment. The first challenge was that the script requires several inputs, which wasn’t an issue—until it came to selecting a datastore. The script only allows specifying <strong>one</strong> datastore, which didn't work for my setup.</p>
+<p>So lets see what changes needs to be done to get the script to work on our limited setup.</p>
+<h3 id="changes-i-made">Changes I Made</h3>
+<p>To successfully deploy VCF on my <strong>two-node cluster</strong>, I modified the script in several ways:</p>
+<ul>
+<li><strong>Reduced the NSX Manager size</strong> to <strong>small</strong> to save resources.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$NSXManagerSize</span> <span class="p">=</span> <span class="s2">&#34;small&#34;</span>
+</span></span></code></pre></div><ul>
+<li><strong>Lowered the nested ESXi CPU count</strong> from <strong>12 to 8</strong> to fit within my available hardware.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$NestedESXiMGMTvCPU</span> <span class="p">=</span> <span class="s2">&#34;8&#34;</span>
+</span></span></code></pre></div><ul>
+<li><strong>Modified the datastore variable</strong> to match my <strong>NUC-specific naming pattern</strong>, allowing me to use individual NVMe disks.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$VMDatastorePattern</span> <span class="p">=</span> <span class="s2">&#34;*NVMe*&#34;</span> <span class="c">#pattern for local vmfs *NVMe </span>
+</span></span></code></pre></div><p>
+  <figure>
+  <picture>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/homelab/" title="Homelab">Homelab</a>
-      </h3>
+    
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/homelab/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/intelnuc/" title="Intelnuc">Intelnuc</a>
-      </h3>
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="VMFS Datastores"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/intelnuc/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/powercli/" title="Powercli">Powercli</a>
-      </h3>
+        class="image_figure image_internal image_processed"
+        width="1582"
+        height="210"
+        src="https://ps-cloudlabs.com/post/automated-vcf-deployment/vmfs-datastore.png"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/powercli/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/powershell/" title="Powershell">Powershell</a>
-      </h3>
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
+    />
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/powershell/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    </picture>
+</figure>
+</p>
+<ul>
+<li><strong>Removed workload domain input</strong>, as deploying additional workload domains is impractical for my small homelab.</li>
+<li><strong>Adjusted the deployment logic</strong> for nested ESXi hosts:
+<ul>
+<li>I distributed the <strong>four nested ESXi hosts</strong> across my two NUCs.</li>
+<li><strong>Odd-numbered hosts</strong> go on <code>esxi01</code>, while <strong>even-numbered hosts</strong> go on <code>esxi02</code>.</li>
+<li>This ensures an even distribution of nested ESXi hosts across the two-node cluster.</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nv">$counter</span> <span class="p">=</span> <span class="mf">0</span> <span class="c">#counter to track the deployments</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">   <span class="nv">$NestedESXiHostnameToIPsForManagementDomain</span><span class="p">.</span><span class="py">GetEnumerator</span><span class="p">()</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">-Property</span> <span class="n">Value</span> <span class="p">|</span> <span class="nb">Foreach-Object</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">       <span class="nv">$VMName</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Key</span>
+</span></span><span class="line"><span class="ln">4</span><span class="cl">       <span class="nv">$VMIPAddress</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">Value</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl">
+</span></span><span class="line"><span class="ln">6</span><span class="cl">       <span class="nv">$evenorodd</span> <span class="p">=</span> <span class="nv">$counter</span> <span class="p">%</span> <span class="mf">2</span> <span class="c">#check if counter is odd or even</span>
+</span></span><span class="line"><span class="ln">7</span><span class="cl">       <span class="nv">$vmhost</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$cluster</span> <span class="p">|</span> <span class="nb">Get-VMhost</span> <span class="p">|</span> <span class="nb">Sort-Object</span><span class="p">)[</span><span class="nv">$evenorodd</span><span class="p">]</span> <span class="c">#select esxi host </span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl">       <span class="nv">$datastore</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="p">|</span> <span class="nb">Get-Datastore</span> <span class="n">-Name</span> <span class="nv">$VMDatastorePattern</span><span class="p">)</span> <span class="c">#select datastore with the pattern</span>
+</span></span></code></pre></div><ul>
+<li>Ensure <strong>Cloudbuilder</strong> is also deployed on a local Datastore</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$deployCloudBuilder</span> <span class="o">-eq</span> <span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nv">$vmhost</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$cluster</span> <span class="p">|</span> <span class="nb">Get-VMhost</span> <span class="p">|</span> <span class="nb">Sort-Object</span><span class="p">)[</span><span class="mf">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">    <span class="nv">$datastore</span> <span class="p">=</span> <span class="p">(</span><span class="nv">$vmhost</span> <span class="p">|</span> <span class="nb">Get-Datastore</span> <span class="n">-Name</span> <span class="nv">$VMDatastorePattern</span><span class="p">)</span>
+</span></span></code></pre></div><ul>
+<li>Shutdown <strong>vCenter</strong> in order to save some extra resources ;)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln">1</span><span class="cl"><span class="nb">My-Logger</span> <span class="s2">&#34;Going to wait 240 seconds then turning off vcenter to safe resources...&#34;</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="nb">sleep </span><span class="mf">240</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">Connect-VIServer</span> <span class="n">-server</span> <span class="nv">$VIServer</span> <span class="n">-user</span> <span class="nv">$VIUsername</span> <span class="n">-password</span> <span class="nv">$VIPassword</span> 
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="nb">Get-VM</span> <span class="n">-Name</span> <span class="n">vcsa</span> <span class="p">|</span> <span class="nb">Stop-VMGuest</span> <span class="n">-Confirm:</span><span class="vm">$false</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="nb">Disconnect-VIServer</span> <span class="p">*</span> <span class="n">-Confirm:</span><span class="vm">$false</span> 
+</span></span></code></pre></div><p>For instruction how to run the script and adjust it you can have a look at the original github repo from william lam.
+<a href="https://github.com/lamw/vcf-automated-lab-deployment">https://github.com/lamw/vcf-automated-lab-deployment</a></p>
+<p>
+  <figure>
+  <picture>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/vcf/" title="Vcf">Vcf</a>
-      </h3>
+    
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/vcf/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/vsphere/" title="Vsphere">Vsphere</a>
-      </h3>
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="2 NUCs overview"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 22, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/vsphere/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/networking/" title="Networking">Networking</a>
-      </h3>
+        class="image_figure image_internal image_processed"
+        width="1192"
+        height="311"
+        src="https://ps-cloudlabs.com/post/automated-vcf-deployment/2nucs.png"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 1, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/networking/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/opensense/" title="Opensense">Opensense</a>
-      </h3>
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 1, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
+    />
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/opensense/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    </picture>
+</figure>
 
-      <li>
-      </li>
-    </ul>
-  </div>
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Nested Hosts"
+      
+        class="image_figure image_internal image_processed"
+        width="1073"
+        height="397"
+        src="https://ps-cloudlabs.com/post/automated-vcf-deployment/nested-hosts.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>As we can see both NUCs are heavy loaded with the nested ESXi Hosts, but all good to get a overview and first touchpoints with VCF.</p>
+<h2 id="cleanup-script-for-easy-reset">Cleanup Script for Easy Reset</h2>
+<p>To make experimenting with VCF deployments easier, I also created a <strong>cleanup script</strong>. This script allows me to completely remove the VCF installation, clean up the environment, and restart vCenter—ready for a fresh deployment.</p>
+<p>The cleanup script performs the following tasks:</p>
+<ul>
+<li>Connects to the <strong>Intel NUCs</strong>.</li>
+<li>Stops and removes all <strong>nested ESXi hosts</strong>.</li>
+<li>Start the powered off <strong>vCenter</strong>.</li>
+<li>Removes any leftover <strong>vApp</strong> from the vCenter inventory.</li>
+</ul>
+<div class="highlight" title="cleanup.ps1"><pre tabindex="0" class="chroma"><code class="language-pwsh" data-lang="pwsh"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nv">$vcentervm</span> <span class="p">=</span> <span class="s2">&#34;vcsa&#34;</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="nv">$vcenterip</span> <span class="p">=</span> <span class="s2">&#34;10.10.5.10&#34;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nv">$vcenterpw</span> <span class="p">=</span> <span class="s2">&#34;VMware1!&#34;</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="nv">$esxis</span> <span class="p">=</span> <span class="vm">@</span><span class="p">(</span><span class="s2">&#34;10.10.5.250&#34;</span><span class="p">,</span> <span class="s2">&#34;10.10.5.251&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="nv">$esxipassword</span> <span class="p">=</span> <span class="s1">&#39;VMware1!&#39;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="nv">$esxi</span> <span class="k">in</span> <span class="nv">$esxis</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="nb">Connect-VIserver</span> <span class="n">-server</span> <span class="nv">$esxi</span> <span class="n">-user</span> <span class="n">root</span> <span class="n">-password</span> <span class="nv">$esxipassword</span> 
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="nb">Get-VM</span> <span class="n">-Name</span> <span class="n">vcf</span><span class="p">-*</span> <span class="p">|</span> <span class="nb">Stop-VM</span> <span class="n">-Confirm:</span><span class="vm">$false</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="nb">Get-VM</span> <span class="n">-Name</span> <span class="n">vcf</span><span class="p">-*</span> <span class="p">|</span> <span class="nb">Remove-VM</span> <span class="n">-DeletePermanently</span> <span class="n">-Confirm:</span><span class="vm">$false</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nb">Get-VM</span> <span class="n">-Name</span> <span class="nv">$vcentervm</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nb">Get-VM</span> <span class="n">-Name</span> <span class="nv">$vcentervm</span> <span class="p">|</span> <span class="nb">Start-VM</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="nb">Disconnect-VIServer</span> <span class="n">-server</span> <span class="mf">10.10</span><span class="p">.</span><span class="py">5</span><span class="p">.</span><span class="py">250</span> <span class="n">-Confirm:</span><span class="vm">$false</span> 
+</span></span><span class="line"><span class="ln">15</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">
+</span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="vm">$true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="nb">Connect-VIserver</span> <span class="n">-server</span> <span class="nv">$vcenterip</span> <span class="n">-user</span> <span class="n">administrator</span><span class="nv">@vsphere</span><span class="p">.</span><span class="py">local</span> <span class="n">-password</span> <span class="nv">$vcenterpw</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">        <span class="nb">Get-VApp</span> <span class="n">-Name</span> <span class="s1">&#39;Nested-VCF-*&#39;</span> <span class="p">|</span> <span class="nb">Remove-VApp</span> <span class="n">-DeletePermanently</span> <span class="n">-Confirm:</span><span class="vm">$false</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">        <span class="nb">Disconnect-VIServer</span> <span class="p">*</span> <span class="n">-Confirm:</span><span class="vm">$false</span> 
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="n">exit</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">    <span class="k">catch</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">25</span><span class="cl">        <span class="nb">Write-Host</span> <span class="s2">&#34;Sleep 1min and try to connect to vcenter&#34;</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl">        <span class="nb">sleep </span><span class="mf">60</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="conclusion">Conclusion</h2>
+<p>By tweaking the script, I managed to work around the shared datastore requirement and adapt the deployment to my limited homelab resources. In an upcoming post, I'll dive deeper into the technical details of these modifications and share the full deployment process.</p>
+<p>Feel free to have a look at the script and try it in your homelab :)</p>
+<p><a href="https://github.com/p3t35/vcf-automated-lab-deployment">https://github.com/p3t35/vcf-automated-lab-deployment</a></p>
+<p>Stay tuned! 🚀</p>
+
+    </div><div class="post_comments">
+  
+  
+  
+  
+</div>
+
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -499,9 +468,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>

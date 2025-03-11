@@ -3,10 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ps-cloudlabs.com/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/post/automated-vcf-deployment/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/esxi/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ps-cloudlabs.com/tags/homelab/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/intelnuc/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/post/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/powercli/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/powershell/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/vcf/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ps-cloudlabs.com/tags/vsphere/</loc>
+    <lastmod>2025-02-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ps-cloudlabs.com/post/network-setup/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
@@ -17,19 +44,7 @@
     <loc>https://ps-cloudlabs.com/tags/opensense/</loc>
     <lastmod>2025-02-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://ps-cloudlabs.com/post/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ps-cloudlabs.com/tags/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ps-cloudlabs.com/tags/vsphere/</loc>
-    <lastmod>2025-02-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://ps-cloudlabs.com/post/home-lab-setup/</loc>
-    <lastmod>2025-01-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://ps-cloudlabs.com/tags/intelnuc/</loc>
     <lastmod>2025-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://ps-cloudlabs.com/setup/</loc>

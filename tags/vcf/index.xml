@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Powershell on PS-Cloudlabs</title>
-    <link>https://ps-cloudlabs.com/tags/powershell/</link>
-    <description>Recent content in Powershell on PS-Cloudlabs</description>
+    <title>Vcf on PS-Cloudlabs</title>
+    <link>https://ps-cloudlabs.com/tags/vcf/</link>
+    <description>Recent content in Vcf on PS-Cloudlabs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>ps-cloudlabs | Peter Summa</copyright>
-    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ps-cloudlabs.com/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://ps-cloudlabs.com/tags/vcf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automated VCF Deployment</title>
       <link>https://ps-cloudlabs.com/post/automated-vcf-deployment/</link>
