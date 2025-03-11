@@ -53,7 +53,7 @@ $NestedESXiMGMTvCPU = "8"
 ```
 - **Modified the datastore variable** to match my **NUC-specific naming pattern**, allowing me to use individual NVMe disks.
 ```pwsh {}
-$VMDatastorePattern = "*NVMe*" #pattern for local vmfs *NVMe 
+$VMDatastorePattern = "*NVMe*" #pattern for local vmfs *NVMe* 
 ```
 ![VMFS Datastores](vmfs-datastore.png)
 
