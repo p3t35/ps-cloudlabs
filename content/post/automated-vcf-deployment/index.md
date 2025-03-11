@@ -16,8 +16,8 @@ author: 'Peter Summa'
 #featureImage: 'homelab-setup-sw.jpeg' # Top image on post.
 # featureImageAlt: 'Description of image' # Alternative text for featured image.
 # featureImageCap: 'This is the featured image.' # Caption (optional).
-thumbnail: 'network-thumb.jpg' # Image in lists of posts.
-shareImage: 'network-thumb.jpg' # For SEO and social media snippets.
+thumbnail: '2nodes.jpg' # Image in lists of posts.
+shareImage: '2nodes.jpg' # For SEO and social media snippets.
 ---
 # Deploying VMware Cloud Foundation (VCF) on a Small Homelab – Is It Possible?  
 
