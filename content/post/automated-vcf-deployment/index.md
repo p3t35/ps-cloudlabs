@@ -2,7 +2,7 @@
 title: 'Automated VCF Deployment'
 description: 'Deploying VCF - the automated way with 2 NUCs'
 summary: "Deploying VCF - the automated way with 2 NUCs"
-date: '2025-02-22'
+date: '2025-03-11'
 tags:
   - homelab
   - intelnuc
