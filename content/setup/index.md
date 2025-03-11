@@ -12,6 +12,12 @@ shareImage: 'homelab-setup-sw.jpeg' # For SEO and social media snippets.
 ---
 
 ## Hardware
+**11.03.2025 - Little Upgrade**
+
+Thanks to my colleague Timur for the 3D printed surprise :)
+![2 Node mini rack](2nodes.jpg)
+
+
 ![Homelab Setup](homelab-setup-v1.jpeg)
 
 ## Network
