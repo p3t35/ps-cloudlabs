@@ -4,10 +4,12 @@
   lang="en"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Homelab | PS-Cloudlabs</title>
+<title>VCF9 2 Node setup | PS-Cloudlabs</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,25 +19,56 @@
 
 
 
+  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="Deploying VCF9 - on 2 NUCs with improvised storage" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Homelab" />
-<meta name="twitter:image" content="https://ps-cloudlabs.com/images/thumbnail.png"/>
-<meta property="og:url" content="https://ps-cloudlabs.com/tags/homelab/" />
-<meta property="og:title" content="Homelab" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="https://ps-cloudlabs.com/images/thumbnail.png" />
+<meta name="twitter:title" content="VCF9 2 Node setup" />
+<meta name="twitter:image" content="https://ps-cloudlabs.com/post/vcf9-2-node-setup/thumbnail.jpg"/>
+<meta property="og:url" content="https://ps-cloudlabs.com/post/vcf9-2-node-setup/" />
+<meta property="og:title" content="VCF9 2 Node setup" />
+<meta property="og:description" content="Deploying VCF9 - on 2 NUCs with improvised storage" />
+<meta property="og:image" content="https://ps-cloudlabs.com/post/vcf9-2-node-setup/thumbnail.jpg" />
+  <meta name="keywords" content="homelab,intelnuc,vcf,vsphere,esxi,vcf9" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage":"https:\/\/ps-cloudlabs.com\/post\/vcf9-2-node-setup\/",
+      "name": "PS-Cloudlabs",
+      "headline": "VCF9 2 Node setup",
+      "description": "Deploying VCF9 - on 2 NUCs with improvised storage",
+      "url": "https:\/\/ps-cloudlabs.com\/post\/vcf9-2-node-setup\/",
+      "datePublished": "2025-07-13T00:00:00Z",
+      "dateModified": "2025-07-13T00:00:00Z",
+      "keywords": ["homelab","intelnuc","vcf","vsphere","esxi","vcf9"],
+      "author": {
+        "@type": "Person",
+        "name": "map[name:Jane Doe]"
+      },
+      "image":{
+        "@type":"ImageObject",
+        "url": "https:\/\/ps-cloudlabs.com\/post\/vcf9-2-node-setup\/thumbnail.jpg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type":"ImageObject",
+          "url": "https:\/\/ps-cloudlabs.com\/logos\/logo.png"
+        },
+        "name": "PS-Cloudlabs"
+      }
+    }
+  </script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://ps-cloudlabs.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ps-cloudlabs.com/icons/favicon-32x32.png">
 <link rel="manifest" href="https://ps-cloudlabs.com/icons/site.webmanifest">
 
-<link rel="canonical" href="https://ps-cloudlabs.com/tags/homelab/">
-<link rel="alternate" type="application/rss+xml" href="https://ps-cloudlabs.com/tags/homelab/index.xml" title="PS-Cloudlabs" />
+<link rel="canonical" href="https://ps-cloudlabs.com/post/vcf9-2-node-setup/">
 
 
 
@@ -123,19 +156,10 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/post/vcf9-2-node-setup/" title="VCF9 2 Node setup">VCF9 2 Node setup</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">VCF9 2 Node setup</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -154,9 +178,22 @@
     </span>
   </div>
 
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
+    <div class="post_body"><h1 id="vcf-9-is-around-the-corner--time-to-upgrade-the-homelab">VCF 9 Is Around the Corner – Time to Upgrade the Homelab</h1>
+<p>With <strong>VCF 9</strong> right around the corner, it’s the perfect moment to give the homelab a long overdue upgrade.</p>
+<hr>
+<h2 id="new-hardware-8-port-25gbit-switch">New Hardware: 8-Port 2.5Gbit Switch</h2>
+<p>To kick things off, I picked up an <strong>8-port 2.5 Gbit switch</strong> from AliExpress for just <strong>€54</strong>. Surprisingly, it performs well for its price and fits nicely into the homelab setup - the webui is a little &quot;oldschool&quot; but those its job. It’s a great value option for those looking to upgrade their networking without spending a fortune.</p>
+<hr>
+<h2 id="goodbye-nested-hosts-and-hello-traditional-nfs">Goodbye Nested Hosts and hello Traditional NFS</h2>
+<p>Thanks to the <strong>reduced requirements</strong> and improved <strong>flexibility</strong> of VCF 9, I’ve decided to <strong>deploy VCF 9 without nested ESXi hosts</strong>.</p>
+<p>I’m currently missing a third NUC or a dedicated storage host, so I opted for a improvised storage solution for providing NFS storage to my lab.</p>
+<hr>
+<h2 id="proxmox--usb-nic--ubuntu-vm--diy-nfs">Proxmox + USB NIC + Ubuntu VM = DIY NFS</h2>
+<p>I had a <strong>2.5 Gbit USB 3.0 adapter</strong> lying around, which I connected to my <strong>always-on Proxmox node</strong>. On this node, an <strong>Ubuntu VM</strong> runs with a <strong>single NVMe drive</strong> acting as the shared storage.</p>
+<p>At first, I wasn’t sure if this setup would even work—but hey, why not give it a try?</p>
+<p>Additionally, I <strong>migrated my pfSense</strong> firewall to this Proxmox node as well, isolating firewall responsibilities from my lab hosts.</p>
+<h2 id="homelab-setup-20homelab-setup_2jpg">And this is what the current state looks like:
+
   <figure>
   <picture>
 
@@ -171,59 +208,40 @@
     <img
       loading="lazy"
       decoding="async"
-      alt="VCF9 2 Node setup"
+      alt="homelab setup 2.0"
       
-        class="image_figure image_thumbnail image_internal image_unprocessed"
-        src="https://ps-cloudlabs.com/post/vcf9-2-node-setup/thumbnail.jpg"
+        class="image_figure image_internal image_processed"
+        width="751"
+        height="428"
+        src="https://ps-cloudlabs.com/post/vcf9-2-node-setup/homelab-setup_2.jpg"
       
       
     />
 
     </picture>
 </figure>
-
-      </div>
-      
-        <div class="pale">
-          
-            <p>Deploying VCF9 - on 2 NUCs with improvised storage</p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/post/vcf9-2-node-setup/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/post/automated-vcf-deployment/" title="Automated VCF Deployment">Automated VCF Deployment</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Mar 11, 2025</span>
-    <span class="post_time"> · 4 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
-        </a><a href='https://ps-cloudlabs.com/tags/intelnuc/' title="intelnuc" class="post_tag button button_translucent">intelnuc
-        </a><a href='https://ps-cloudlabs.com/tags/vcf/' title="vcf" class="post_tag button button_translucent">vcf
-        </a><a href='https://ps-cloudlabs.com/tags/vsphere/' title="vsphere" class="post_tag button button_translucent">vsphere
-        </a><a href='https://ps-cloudlabs.com/tags/esxi/' title="esxi" class="post_tag button button_translucent">esxi
-        </a><a href='https://ps-cloudlabs.com/tags/powershell/' title="powershell" class="post_tag button button_translucent">powershell
-        </a><a href='https://ps-cloudlabs.com/tags/powercli/' title="powercli" class="post_tag button button_translucent">powercli
-        </a>
-    </span>
-  </div>
-
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
+</h2>
+<h2 id="esxi-with-nvme-tiering">ESXi with NVMe Tiering</h2>
+<p>For the ESXi nodes, I went with <strong>NVMe tiering</strong>, which is now a <strong>fully supported feature</strong> in ESXi 9. Setup was straightforward, and everything installed smoothly.</p>
+<hr>
+<h2 id="vcf-9-installation-experience">VCF 9 Installation Experience</h2>
+<p>The <strong>new VCF 9 installation UI</strong> is a major improvement. It’s <strong>much easier and more flexible</strong>, especially for “special” configurations that previously required manually tweaking JSON files (looking at you, VCF 5.2).</p>
+<p>Deployment went better than expected:</p>
+<ul>
+<li><strong>Edge node deployment</strong> worked on my limited setup</li>
+<li>Storage latency is not ideal but works</li>
+<li>The <strong>Windows jump host</strong> feels a bit laggy</li>
+</ul>
+<p>…but for testing and getting hands-on experience with VCF 9, it’s <strong>surprisingly good</strong>.</p>
+<hr>
+<h2 id="looking-ahead">Looking Ahead</h2>
+<p>There’s definitely room for <strong>future improvements</strong>, particularly in the <strong>storage department</strong>, but I have to say—<strong>VCF 9 is a big leap forward</strong> for the VCF platform overall.</p>
+<hr>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>That’s the current state of my lab. I mainly wanted to <strong>showcase what’s possible with limited hardware</strong> and encourage others to tinker, test, and <strong>see what you can achieve</strong> with some creativity and the right tools.</p>
+<p>Until next time—keep homelabbing!</p>
+<p>Last but not least, a real-world picture of what an improvised homelab looks like: &quot;the more you look, the worse it gets&quot;.</p>
+<p>
   <figure>
   <picture>
 
@@ -238,228 +256,38 @@
     <img
       loading="lazy"
       decoding="async"
-      alt="Automated VCF Deployment"
+      alt="The real homelab"
       
-        class="image_figure image_thumbnail image_internal image_unprocessed"
-        src="https://ps-cloudlabs.com/post/automated-vcf-deployment/2nodes.jpg"
-      
-      
-    />
-
-    </picture>
-</figure>
-
-      </div>
-      
-        <div class="pale">
-          
-            <p>Deploying VCF - the automated way with 2 NUCs</p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/post/automated-vcf-deployment/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/post/network-setup/" title="Network Setup">Network Setup</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Feb 1, 2025</span>
-    <span class="post_time"> · 3 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
-        </a><a href='https://ps-cloudlabs.com/tags/opensense/' title="opensense" class="post_tag button button_translucent">opensense
-        </a><a href='https://ps-cloudlabs.com/tags/networking/' title="networking" class="post_tag button button_translucent">networking
-        </a><a href='https://ps-cloudlabs.com/tags/vsphere/' title="vsphere" class="post_tag button button_translucent">vsphere
-        </a>
-    </span>
-  </div>
-
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
-  <figure>
-  <picture>
-
-    
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt="Network Setup"
-      
-        class="image_figure image_thumbnail image_internal image_unprocessed"
-        src="https://ps-cloudlabs.com/post/network-setup/network-thumb.jpg"
+        class="image_figure image_internal image_processed"
+        width="3008"
+        height="2303"
+        src="https://ps-cloudlabs.com/post/vcf9-2-node-setup/setup_2.jpeg"
       
       
     />
 
     </picture>
 </figure>
+</p>
 
-      </div>
-      
-        <div class="pale">
-          
-            <p>Virtual Firewall (OPNsense) and Networking Setup for my Homelab</p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/post/network-setup/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    </div><div class="post_comments">
+  
+  
+  
+  
+</div>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/post/home-lab-setup/" title="Home Lab Setup">Home Lab Setup</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jan 26, 2025</span>
-    <span class="post_time"> · 3 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
-        </a>
-    </span>
-  </div>
 
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
-  <figure>
-  <picture>
 
-    
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt="Home Lab Setup"
-      
-        class="image_figure image_thumbnail image_internal image_unprocessed"
-        src="https://ps-cloudlabs.com/post/home-lab-setup/homelab-setup-sw.jpeg"
-      
-      
-    />
 
-    </picture>
-</figure>
-
-      </div>
-      
-        <div class="pale">
-          
-            <p>A short introduction of my current and growing home lab setup.</p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/post/home-lab-setup/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/setup/" title="Setup">Setup</a>
-      </h3>
-      
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jan 26, 2025</span>
-    <span class="post_time"> · 1 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
-        </a><a href='https://ps-cloudlabs.com/tags/intelnuc/' title="intelnuc" class="post_tag button button_translucent">intelnuc
-        </a>
-    </span>
-  </div>
-
-    </div>
-    <div class="excerpt_footer partition">
-      <div class="excerpt_thumbnail">
-  <figure>
-  <picture>
-
-    
-      
-        
-        
-        
-        
-        
-        
-    <img
-      loading="lazy"
-      decoding="async"
-      alt="Setup"
-      
-        class="image_figure image_thumbnail image_internal image_unprocessed"
-        src="https://ps-cloudlabs.com/setup/homelab-setup-sw.jpeg"
-      
-      
-    />
-
-    </picture>
-</figure>
-
-      </div>
-      
-        <div class="pale">
-          
-            <p>My Current Homelab setup</p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/setup/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-      <li>
-      </li>
-    </ul>
-  </div>
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -548,9 +376,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
