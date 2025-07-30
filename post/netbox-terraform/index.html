@@ -4,10 +4,12 @@
   lang="en"
   data-figures=""
   
+    class="page"
+  
   
   >
   <head>
-<title>Tags | PS-Cloudlabs</title>
+<title>Terraform and Netbox - meets homelab | PS-Cloudlabs</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,25 +19,56 @@
 
 
 
+  
 <meta property="og:locale" content="en" />
 
 <meta property="og:type" content="article">
-<meta name="description" content="" />
+<meta name="description" content="Organize my homelab with Terraform and Netbox" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
-<meta name="twitter:title" content="Tags" />
-<meta name="twitter:image" content="https://ps-cloudlabs.com/images/thumbnail.png"/>
-<meta property="og:url" content="https://ps-cloudlabs.com/tags/" />
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="" />
-<meta property="og:image" content="https://ps-cloudlabs.com/images/thumbnail.png" />
+<meta name="twitter:title" content="Terraform and Netbox - meets homelab" />
+<meta name="twitter:image" content="https://ps-cloudlabs.com/post/netbox-terraform/thumbnail.jpg"/>
+<meta property="og:url" content="https://ps-cloudlabs.com/post/netbox-terraform/" />
+<meta property="og:title" content="Terraform and Netbox - meets homelab" />
+<meta property="og:description" content="Organize my homelab with Terraform and Netbox" />
+<meta property="og:image" content="https://ps-cloudlabs.com/post/netbox-terraform/thumbnail.jpg" />
+  <meta name="keywords" content="homelab,terraform,netbox,docker" />
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage":"https:\/\/ps-cloudlabs.com\/post\/netbox-terraform\/",
+      "name": "PS-Cloudlabs",
+      "headline": "Terraform and Netbox - meets homelab",
+      "description": "Organize my homelab with Terraform and Netbox",
+      "url": "https:\/\/ps-cloudlabs.com\/post\/netbox-terraform\/",
+      "datePublished": "2025-07-30T00:00:00Z",
+      "dateModified": "2025-07-30T00:00:00Z",
+      "keywords": ["homelab","terraform","netbox","docker"],
+      "author": {
+        "@type": "Person",
+        "name": "map[name:Jane Doe]"
+      },
+      "image":{
+        "@type":"ImageObject",
+        "url": "https:\/\/ps-cloudlabs.com\/post\/netbox-terraform\/thumbnail.jpg"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type":"ImageObject",
+          "url": "https:\/\/ps-cloudlabs.com\/logos\/logo.png"
+        },
+        "name": "PS-Cloudlabs"
+      }
+    }
+  </script>
 
 <link rel="apple-touch-icon" sizes="180x180" href="https://ps-cloudlabs.com/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://ps-cloudlabs.com/icons/favicon-32x32.png">
 <link rel="manifest" href="https://ps-cloudlabs.com/icons/site.webmanifest">
 
-<link rel="canonical" href="https://ps-cloudlabs.com/tags/">
-<link rel="alternate" type="application/rss+xml" href="https://ps-cloudlabs.com/tags/index.xml" title="PS-Cloudlabs" />
+<link rel="canonical" href="https://ps-cloudlabs.com/post/netbox-terraform/">
 
 
 
@@ -123,19 +156,10 @@
 </header>
 
     <main>
-
-
-
+  
 <div class="grid-inverse wrap content">
-  <div>
-    <ul class="posts" id="posts">
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/docker/" title="Docker">Docker</a>
-      </h3>
-      
+  <article class="post_content">
+    <h1 class="post_title">Terraform and Netbox - meets homelab</h1>
   <div class="post_meta">
     <span><svg class="icon">
   <title>calendar</title>
@@ -144,332 +168,406 @@
 </span>
     <span class="post_date">
       Jul 30, 2025</span>
-    <span class="post_time"> · 0 min read</span>
+    <span class="post_time"> · 5 min read</span><span>&nbsp;· <a href='https://ps-cloudlabs.com/tags/homelab/' title="homelab" class="post_tag button button_translucent">homelab
+        </a><a href='https://ps-cloudlabs.com/tags/terraform/' title="terraform" class="post_tag button button_translucent">terraform
+        </a><a href='https://ps-cloudlabs.com/tags/netbox/' title="netbox" class="post_tag button button_translucent">netbox
+        </a><a href='https://ps-cloudlabs.com/tags/docker/' title="docker" class="post_tag button button_translucent">docker
+        </a>
+    </span>
   </div>
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/docker/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    <div class="post_body"><h1 id="organizing-my-homelab-with-netbox--terraform">Organizing my homelab with NetBox &amp; Terraform</h1>
+<p>Another Sunday, another day to dive into the homelab!</p>
+<p>While I'm waiting for an additional component to arrive (stay tuned for that!), I figured it's a good time to get a bit more organized. Over time, it’s become harder to track my devices, &quot;racks&quot; (okay, to be fair, I don’t really need racks <strong>yet</strong> – <a href="http://localhost:1313/post/vcf9-2-node-setup/">see this old blog post</a>), and most importantly, all of my IP addresses and VLANs.</p>
+<p>I’ve been wanting to explore <strong>NetBox</strong> for a while now, and this felt like the right moment to give it a proper test run.</p>
+<hr>
+<h2 id="-getting-started-with-netbox">🚀 Getting Started with NetBox</h2>
+<p>I'm running NetBox via Docker on a VM hosted on my Proxmox server.</p>
+<p>To set it up, I used the official NetBox Docker guide:<br>
+👉 <a href="https://github.com/netbox-community/netbox-docker">https://github.com/netbox-community/netbox-docker</a></p>
+<p>The setup process went smooth and straightforward.</p>
+<p>So lets dive into <strong>Netbox</strong></p>
+<p>But hey – clicking through a UI and manually setting things up? That’s not 2025. This is why I decided to manage <strong>NetBox with Terraform</strong>.</p>
+<p>Bonus: I also added my <strong>Windows DNS</strong> and <strong>private AdGuard server</strong> to Terraform, so I can keep track of all my used IP addresses in one centralized, without adding DNS records manually.</p>
+<hr>
+<h2 id="-terraform-setup-overview">🧰 Terraform Setup Overview</h2>
+<p><em>(I won’t be covering basic Terraform usage – there are plenty of great tutorials out there.)</em></p>
+<h3 id="-file-structure">🔧 File Structure</h3>
+<p>To keep things clean, I split my Terraform code into logical chunks:</p>
+<ul>
+<li><code>provider.tf</code>: Defines providers and authentication</li>
+<li><code>dcim.tf</code>: For <strong>Data Center Infrastructure Management</strong></li>
+<li><code>ipam.tf</code>: For <strong>IP Address Management</strong></li>
+<li><code>dns.tf</code>: For <strong>DNS Management</strong></li>
+</ul>
+<p>These files describe how and what resources terraform should create</p>
+<p>Additionally, I’ve got:</p>
+<ul>
+<li><code>variables.tf</code>: Declares all input variables</li>
+<li><code>terraform.tfvars</code>: Stores my specific input values</li>
+</ul>
+<p>I’ve tried to keep things <strong>as simple as possible</strong>.</p>
+<p>This is my current provider configuration</p>
+<p><strong>provider.tf</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-terraform" data-lang="terraform"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="nx">terraform</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">  <span class="nx">required_providers</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">    <span class="na">netbox</span> = <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">      <span class="na">source</span>  = <span class="s2">&#34;e-breuninger/netbox&#34;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">      <span class="na">version</span> = <span class="s2">&#34;4.1.0&#34;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">    <span class="na">dns</span> = <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">      <span class="na">source</span>  = <span class="s2">&#34;hashicorp/dns&#34;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">      <span class="na">version</span> = <span class="s2">&#34;~&gt; 3.0&#34;</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="na">adguard</span> = <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">      <span class="na">source</span>  = <span class="s2">&#34;gmichels/adguard&#34;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">      <span class="na">version</span> = <span class="s2">&#34;1.6.2&#34;</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl"><span class="p">}</span><span class="c1">
+</span></span></span><span class="line"><span class="ln">17</span><span class="cl"><span class="c1">
+</span></span></span><span class="line"><span class="ln">18</span><span class="cl"><span class="c1"># example provider configuration for https://demo.netbox.dev
+</span></span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="c1"></span><span class="kr">provider</span> <span class="s2">&#34;netbox&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">  <span class="na">server_url</span>         = <span class="s2">&#34;http://192.168.169.2:8000&#34;</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">  <span class="na">api_token</span>          = <span class="s2">&#34;insertapitokenhere&#34;</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">  <span class="na">skip_version_check</span> = <span class="kc">true</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="p">}</span><span class="c1">
+</span></span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="c1">
+</span></span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"># Configure the DNS Provider
+</span></span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="c1"></span><span class="kr">provider</span> <span class="s2">&#34;dns&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">  <span class="nx">update</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">28</span><span class="cl">    <span class="na">server</span> = <span class="s2">&#34;10.20.10.10&#34;</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="ln">31</span><span class="cl"><span class="kr">
+</span></span></span><span class="line"><span class="ln">32</span><span class="cl"><span class="kr">provider</span> <span class="s2">&#34;adguard&#34;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">33</span><span class="cl">  <span class="na">host</span>     = <span class="s2">&#34;192.168.169.53:80&#34;</span>
+</span></span><span class="line"><span class="ln">34</span><span class="cl">  <span class="na">username</span> = <span class="s2">&#34;admin&#34;</span>
+</span></span><span class="line"><span class="ln">35</span><span class="cl">  <span class="na">password</span> = <span class="nb">var</span><span class="p">.</span><span class="nx">adguard_password</span>
+</span></span><span class="line"><span class="ln">36</span><span class="cl">  <span class="na">scheme</span>   = <span class="s2">&#34;http&#34;</span><span class="c1"> # defaults to https
+</span></span></span><span class="line"><span class="ln">37</span><span class="cl"><span class="c1"></span>  <span class="na">timeout</span>  = <span class="m">5</span><span class="c1">      # in seconds, defaults to 10
+</span></span></span><span class="line"><span class="ln">38</span><span class="cl"><span class="c1"></span>  <span class="na">insecure</span> = <span class="kc">true</span><span class="c1">   # when `true` will skip TLS validation
+</span></span></span><span class="line"><span class="ln">39</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="-organizing-infrastructure-with-variables">🗂️ Organizing Infrastructure with Variables</h2>
+<p>I split my input variables (<code>terraform.tfvars</code>) into three main sections:</p>
+<ol>
+<li>
+<p><strong>Physical Infrastructure</strong>  red</p>
+<ul>
+<li>Racks, sites, and devices</li>
+</ul>
+</li>
+<li>
+<p><strong>Home Network</strong>  orange</p>
+<ul>
+<li>Network configuration and device mappings</li>
+</ul>
+</li>
+<li>
+<p><strong>Lab Environment</strong>  green</p>
+<ul>
+<li>VLANs, test devices, lab-specific segments</li>
+</ul>
+</li>
+</ol>
+<p>These input variables map directly to Terraform resources.</p>
+<p>
+  <figure>
+  <picture>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/homelab/" title="Homelab">Homelab</a>
-      </h3>
+    
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 30, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/homelab/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/netbox/" title="Netbox">Netbox</a>
-      </h3>
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="tfvars overview"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 30, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/netbox/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/terraform/" title="Terraform">Terraform</a>
-      </h3>
+        class="image_figure image_internal image_processed"
+        width="1512"
+        height="1392"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/tfvars.png"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 30, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/terraform/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/esxi/" title="Esxi">Esxi</a>
-      </h3>
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 13, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
+    />
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/esxi/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    </picture>
+</figure>
+</p>
+<hr>
+<h2 id="-example-managing-vlans">🔄 Example: Managing VLANs</h2>
+<p>Here’s a quick look at how I manage VLANs using Terraform. I will not cover every section of my terraform, you can look at the full code at my github
+<a href="https://github.com/p3t35/homelab-terraform">https://github.com/p3t35/homelab-terraform</a></p>
+<p>Each VLAN is defined in a variable as part of an array. Every item in that array contains the full dataset needed for NetBox.</p>
+<p>So if I want to add a new VLAN? I simply copy a row in the array and tweak the values. Terraform takes care of the rest. 🙌</p>
+<p>
+  <figure>
+  <picture>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/intelnuc/" title="Intelnuc">Intelnuc</a>
-      </h3>
+    
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 13, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/intelnuc/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/vcf/" title="Vcf">Vcf</a>
-      </h3>
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="VLAN Overview"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 13, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/vcf/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/vcf9/" title="Vcf9">Vcf9</a>
-      </h3>
+        class="image_figure image_internal image_processed"
+        width="1410"
+        height="207"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/vlans.png"
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 13, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
-
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/vcf9/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
-
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/vsphere/" title="Vsphere">Vsphere</a>
-      </h3>
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Jul 13, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
+    />
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/vsphere/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    </picture>
+</figure>
+</p>
+<p>And here’s how that variable gets mapped to a resource:</p>
+<p>
+  <figure>
+  <picture>
 
-        <li class="post_item">
-  <div class="excerpt">
-    <div class="excerpt_header">
-      <h3 class="post_link">
-        <a href="https://ps-cloudlabs.com/tags/powercli/" title="Powercli">Powercli</a>
-      </h3>
+    
       
-  <div class="post_meta">
-    <span><svg class="icon">
-  <title>calendar</title>
-  <use xlink:href="#calendar"></use>
-</svg>
-</span>
-    <span class="post_date">
-      Mar 11, 2025</span>
-    <span class="post_time"> · 0 min read</span>
-  </div>
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="variables to resource mapping"
+      
+        class="image_figure image_internal image_processed"
+        width="1450"
+        height="661"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/mapping.png"
+      
+      
+    />
 
-    </div>
-      <div class="excerpt_footer">
-        <div class="pale">
-          
-            <p></p>
-          
-          <br>
-          <a href="https://ps-cloudlabs.com/tags/powercli/" title="Read More" class="excerpt_more button">Read More</a>
-        </div>
-      </div>
-    </div>
-  </li>
+    </picture>
+</figure>
+</p>
+<p>As you can see, the information from each dataset is dynamically pulled into different resources. No need to touch each resource block when I want to create or update VLANs. This makes it easy and smooth to add additional information.
+With the help of for_each loops in terraform you can handle this datasets very clean.</p>
+<p>This is what the result from the terraform code looks like:
 
-      <li>
-    <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
-      </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
-      </li>
-      <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="/tags/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
-      </li>
-    </ul>
-      </li>
-    </ul>
-  </div>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Netbox Overview"
+      
+        class="image_figure image_internal image_processed"
+        width="1881"
+        height="1371"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/netbox.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<hr>
+<p>Whit this method I also managed my Windows DNS entries and my home adguard dns rewrites.
+This is also a good example of using different provider and resource types for creating dns entries from one variable file.</p>
+<p>
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Windows DNS entires and adguard rewrites"
+      
+        class="image_figure image_internal image_processed"
+        width="1553"
+        height="969"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/windnsadguard.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>I hope this gives a clearer idea of how I’m using NetBox and Terraform to automate and organize my homelab. There’s still a lot to do, but this is a solid foundation to build on.</p>
+<p>In the end, I built a Terraform-based setup that might be a bit overengineered — but it keeps everything organized and in one place. I'm sure this codebase will continue to evolve over time, with new providers and systems added along the way.</p>
+<p>This should give you a quick introduction and idea how to manage stuff with terraform, depending on your needs and environment this could be expanded with other resources. For example you could managed your firewall rules or virtual machines with terraform. For nearly everything there is an terraform provider out there - so give it a try ;)</p>
+<p>In more andanved setups you can combine terraform with CI/CD workflows to automate this hole process further.
+May I will cover this in another blog post.
+So stay tuned! 😊</p>
+<hr>
+<p>Last but not least, a quick shoutout to Visual Studio Code and its GitHub Copilot feature. It’s made writing code so much easier and was a huge help throughout this project.</p>
+<p>Here are three examples of how I used Copilot to write Terraform code:</p>
+<p>In the first example I needed to add prefixes to each VLAN, so I explained my need very quick.
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Add a prefix to all my VLANs"
+      
+        class="image_figure image_internal image_processed"
+        width="435"
+        height="214"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/copilot1.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Result of the prefixes"
+      
+        class="image_figure image_internal image_processed"
+        width="859"
+        height="315"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/copilot2.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>In the second example I wanted to combine two variables which went pretty easy
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Dedicded to combine the variables vlans and dhcp_range "
+      
+        class="image_figure image_internal image_processed"
+        width="949"
+        height="623"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/copilot3.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+
+
+  <figure>
+  <picture>
+
+    
+      
+        
+        
+        
+        
+        
+        
+    <img
+      loading="lazy"
+      decoding="async"
+      alt="Ended up with only one variable"
+      
+        class="image_figure image_internal image_processed"
+        width="1416"
+        height="213"
+        src="https://ps-cloudlabs.com/post/netbox-terraform/copilot4.png"
+      
+      
+    />
+
+    </picture>
+</figure>
+</p>
+<p>More updates soon!</p>
+
+    </div><div class="post_comments">
+  
+  
+  
+  
+</div>
+
+
+
+
+  </article>
 <aside class="sidebar">
   <section class="sidebar_inner">
     <br>
     
   
   <div class="search">
-    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='tags'>
+    <input type="search" class="search_field form_field" placeholder='Search...' id="find" autocomplete="off" data-scope='post'>
     <label for="find" class="search_label"><svg class="icon">
   <title>search</title>
   <use xlink:href="#search"></use>
@@ -576,9 +674,8 @@
   </section>
 </aside>
 
+  
 </div>
-
-
     </main><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" id="facebook">
     <path d="M437 0H75C33.648 0 0 33.648 0 75v362c0 41.352 33.648 75 75 75h151V331h-60v-90h60v-61c0-49.629 40.371-90 90-90h91v90h-91v61h91l-15 90h-76v181h121c41.352 0 75-33.648 75-75V75c0-41.352-33.648-75-75-75zm0 0"></path>
