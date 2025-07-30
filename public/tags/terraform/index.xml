@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terraform on PS-Cloudlabs</title>
+    <link>http://localhost:1313/tags/terraform/</link>
+    <description>Recent content in Terraform on PS-Cloudlabs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>ps-cloudlabs | Peter Summa</copyright>
+    <lastBuildDate>Wed, 30 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/terraform/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Terraform and Netbox - meets homelab</title>
+      <link>http://localhost:1313/post/netbox-terraform/</link>
+      <pubDate>Wed, 30 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/netbox-terraform/</guid>
+      <description>
+        
+          
+            Organize my homelab with Terraform and Netbox
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
